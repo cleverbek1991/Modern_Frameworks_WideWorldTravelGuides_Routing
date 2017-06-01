@@ -1,0 +1,20 @@
+<form action="#">
+    <p>
+        <input class="with-gap" id="city" type="radio" name="group1" value="city" ng-model="query">
+        <label for="city">City</label>
+    </p>
+    <p>
+        <input class="with-gap" id="country" type="radio" name="group1" value="country" ng-model="query">
+        <label for="country">Country</label>
+    </p>
+    <p>
+        <input class="with-gap" id="region" type="radio" name="group1" value="region" ng-model="query">
+        <label for="region">Region</label>
+    </p>
+    <a class="waves-effect waves-light btn" ng-click="query = undefined">Reset</a>
+</form>
+<div ng-repeat="book in books | filter:{type:query}">
+    <h5>{{book.title}}</h5>
+    <h5>{{book.type}}</h5>
+    <h6>${{book.price}}</h6>
+</div>
